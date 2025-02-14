@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛大心华财税公司 | 一站式企业财税解决方案</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffffff;
+            --secondary: #ffffff;
+            --dark: #ffffff;
+            --light: #ffffff;
+        }
+
+        /* 自定义样式 */
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem !important;
+            color: black !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            float: left
+        }
+
+        .team-member:hover .member-info {
+            transform: translate(0);
+        }
+
+        .member-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.5rem !important;
+            }
+        }
+    
+
+        /* 修改导航栏链接布局为居中 */
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        /* 修改导航栏背景颜色为白色，方便查看黑色字体 */
+        .navbar {
+            background-color: rgb(153, 153, 234);
+        }
+
+        /* 调整导航栏品牌图片样式 */
+        .navbar-brand img {
+            max-height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* 轮播图样式 */
+        .carousel-item img {
+            object-fit: cover;
+            height: 500px;
+            width: 130%;
+        }
+        
+        /* 联系我们部分样式 */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            background-color: #ff9900;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact form button:hover {
+            background-color: #e68a00;
+        }
+
+        .map {
+            margin-top: 40px;
+            animation: fadeInUp 1s ease;
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+    <!-- 导航栏 -->
+    <section id="home" class="py-1">
+        <nav class="navbar navbar-expand-lg navbar-dark gradient-bg fixed-top py-3">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <!-- 替换为你的图片路径 -->
+                    <img src="logo.png" alt="青岛大心华财税公司 logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="#home">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">服务项目</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">关于我们</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="#team">专业团队</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- 滚动播放图片轮播 -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- 图片 1 -->
+            <div class="carousel-item active">
+                <img src="111.png" class="d-block w-100" alt="Image 1">
+            </div>
+            <!-- 图片 2 -->
+            <div class="carousel-item">
+                <img src="2.png" class="d-block w-100" alt="Image 2">
+            </div>
+            <!-- 图片 3 -->
+            <div class="carousel-item">
+                <img src="3.png" class="d-block w-100" alt="Image 3">
+            </div>
+            <!-- 图片 4 -->
+            <div class="carousel-item">
+                <img src="4.png" class="d-block w-100" alt="Image 4">
+            </div><!-- 图片 5 -->
+            <div class="carousel-item">
+                <img src="5.png" class="d-block w-100" alt="Image 4">
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- 首页大图 -->
+    <header class="vh-100 d-flex align-items-center" style="background: url('777.png') center/cover">
+        <div class="container text-center text-white" data-aos="fade-up">
+            <h1 class="hero-text display-3 fw-bold mb-4" style="color: rgb(0, 0, 0);">青岛大心华代理记账有限公司</h1>
+            <h2 class="hero-text display-3 fw-bold mb-4" style="color: rgb(0, 0, 0); ">专业财税服务助力企业合规成长</h2>
+            <p class="lead mb-4" style="color: rgb(0, 0, 0); ">15年行业经验 · 3000+企业选择 · ISO认证服务机构</p>
+            <div class="d-flex gap-3 justify-content-center">
+                <a href="#contact" class="btn btn-warning btn-lg px-5 py-3">电话咨询</a>
+                <a href="tel:400-123-4567" class="btn btn-outline-light btn-lg px-5 py-3">
+                    <i class="fas fa-phone me-2"></i>13166411111
+                </a>
+            </div>
+        </div>
+    </header>
+    <section id="about" class="about-section container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="公司.jpg" alt="公司图片" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2>关于我们</h2>
+                <p>青岛大心华代理记账有限公司是经青岛市财政 局批准，由青岛市市场监督管理局依法审批核准登记 注册成立的专业从事代理记账及相关财税业务的公司 隶属于大心华财税集团。
+                    公司专注于中小企业的财税 管理、营销管理。自成立以来服务中小企业达万余家 积累了丰富的企业管理经验，具备超强的财税筹划能 力。
+                    集团目前在青岛、滨州、潍坊、烟台济南” 日照、临沂、蒙阴、临流、东营等城市设立子公司 会计持证人员100人以上，营销人员300人以上</p>
+                <p>我们致力于为客户提供全方位、高品质的解决方案，。无论是小型初创企业还是大型跨国公司，我们都能根据客户的独特需求，量身定制个性化的服务方案，助力客户实现业务增长与突破。</p>
+            </div>
+        </div>
+
+        <div class="mission-vision">
+            <h3>公司使命与愿景</h3>
+            <p>我们的愿景是[助理企业发展、为企业成长保驾护航、做财税行业标杆]。秉持这一使命，我们始终以客户为中心，不断追求卓越，力求在每一个项目中都超越客户期望。</p>
+            <p>我们的使命是[带领大家内心丰满、物质丰饶、培养引进优秀合伙人共同创业发展]。为了实现这一愿景，我们持续投入研发，吸引顶尖人才，与合作伙伴携手共进，向着更高的目标迈进。</p>
+        </div>
+    </section>
+
+
+    <!-- 服务项目 -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-3">核心服务领域</h2>
+                <p class="text-muted">覆盖企业全生命周期财税需求</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- 服务项1 -->
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="service-card p-4 h-100">
+                        <div class="text-primary mb-3">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+                        <h4 class="mb-3">注册公司</h4>
+                        <p class="text-muted">一对一服务、量身定制计划</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>合法合规的经营</li>
+                            <li><i class="fas fa-check text-success me-2"></i>树立好形象</li>
+                            <li><i class="fas fa-check text-success me-2"></i>吸引客户</li>
+                        </ul>
+                        <a href="#" class="text-decoration-none text-primary">了解更多 →</a>
+                    </div>
+                </div>
+                <!-- 服务项2 -->
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="service-card p-4 h-100">
+                        <div class="text-primary mb-3">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+                        <h4 class="mb-3">税务筹划</h4>
+                        <p class="text-muted">合理税负规划、税收优惠政策落地、跨境税务方案设计</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>企业所得税优化</li>
+                            <li><i class="fas fa-check text-success me-2"></i>增值税管理</li>
+                            <li><i class="fas fa-check text-success me-2"></i>税务风险管理</li>
+                        </ul>
+                        <a href="#" class="text-decoration-none text-primary">了解更多 →</a>
+                    </div>
+                </div>
+                <!-- 服务项3 -->
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="service-card p-4 h-100">
+                        <div class="text-primary mb-3">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+                        <h4 class="mb-3">记账报税</h4>
+                        <p class="text-muted">根据企业需求定制记账报税方案，专业服务，让财务更贴心！</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>节省成本</li>
+                            <li><i class="fas fa-check text-success me-2"></i>财务稳定</li>
+                            <li><i class="fas fa-check text-success me-2"></i>报税及时准确</li>
+                        </ul>
+                        <a href="#" class="text-decoration-none text-primary">了解更多 →</a>
+                    </div>
+                </div>
+                <!-- 服务项4 -->
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="service-card p-4 h-100">
+                        <div class="text-primary mb-3">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+                        <h4 class="mb-3">办理营业执照</h4>
+                        <p class="text-muted">一对一服务、快至3天下证</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>合法经营</li>
+                            <li><i class="fas fa-check text-success me-2"></i>税务简单</li>
+                            <li><i class="fas fa-check text-success me-2"></i>融资便利</li>
+                        </ul>
+                        <a href="#" class="text-decoration-none text-primary">了解更多 →</a>
+                    </div>
+                </div>
+                <!-- 服务项5-->
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="service-card p-4 h-100">
+                        <div class="text-primary mb-3">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+                        <h4 class="mb-3">资质办理</h4>
+                        <p class="text-muted">资深申报员全程跟进，资质办理透明高效</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>承接项目</li>
+                            <li><i class="fas fa-check text-success me-2"></i>吸引人才</li>
+                            <li><i class="fas fa-check text-success me-2"></i>口碑提升</li>
+                        </ul>
+                        <a href="#" class="text-decoration-none text-primary">了解更多 →</a>
+                    </div>
+                </div>
+                <!-- 服务项6 -->
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="service-card p-4 h-100">
+                        <div class="text-primary mb-3">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+                        <h4 class="mb-3">经营帐服务</h4>
+                        <p class="text-muted">专业经营账服务，精准记账，高效报税，为企业财务护航！</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>详细了解企业情况</li>
+                            <li><i class="fas fa-check text-success me-2"></i>预测风险</li>
+                            <li><i class="fas fa-check text-success me-2"></i>发展合规，减少税务风险点</li>
+                    
+                        </ul>
+                        <a href="#" class="text-decoration-none text-primary">了解更多 →</a>
+                    </div>
+                </div>
+                <!-- 更多服务项... -->
+            </div>
+        </div>
+    </section>
+         <!-- 专业团队 -->
+   <section id="team" class="py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">专业团队</h2>
+            <p class="text-muted">注册会计师/税务师/财务分析师团队</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                <div class="team-member">
+                    <img src="徐总.jpg" alt="注册会计师" class="img-fluid">
+                    <div class="member-info">
+                        <h5 class="mb-1">徐宁川</h5>
+                        <p class="small mb-0">集团创始人/集团董事长/税务筹划专家</p>
+                        <hr class="my-2">
+                        <p class="small mb-0">15年企业财税服务经验</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                <div class="team-member">
+                    <img src="工作照.jpg" alt="王会计" class="img-fluid">
+                    <div class="member-info">
+                        <h5 class="mb-1">王会计</h5>
+                        <p class="small mb-0">会计师/税务筹划专家</p>
+                        <hr class="my-2">
+                        <p class="small mb-0">10年企业财税服务经验</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                <div class="team-member">
+                    <img src="程田田.jpg" alt="傅注册会计师" class="img-fluid">
+                    <div class="member-info">
+                        <h5 class="mb-1">程会计</h5>
+                        <p class="small mb-0">会计师/税务筹划专家</p>
+                        <hr class="my-2">
+                        <p class="small mb-0">8年企业财税服务经验</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                <div class="team-member">
+                    <img src="傅会计.jpg" alt="傅会计" class="img-fluid">
+                    <div class="member-info">
+                        <h5 class="mb-1">傅会计</h5>
+                        <p class="small mb-0">会计师/税务筹划专家</p>
+                        <hr class="my-2">
+                        <p class="small mb-0">6年企业财税服务经验</p>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</section>
+</section>
+<!--选择我们-->
+
+<!--联系我们-->
+<section id="contact" class="py-1">
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-4">
+                    <h5 class="mb-4">联系我们</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-3"></i>
+                            青岛市李沧区巨峰路176号信联天地5号楼
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone me-3"></i>
+                            13166411111
+                        </li>
+
+                    </ul>
+                </div> 
+                <div class="col-md-4">
+                    <h5 class="mb-4">关注我们吧</h5>
+                    <div class="row">
+                        <!-- 第一个二维码 - 抖音 -->
+                        <div class="col-3 text-center">
+                            <p>抖音</p>
+                            <a href="#" target="_blank">
+                                <img src="抖音.jpg" alt="抖音二维码" class="img-fluid qr-code-img">
+                            </a>
+                        </div>
+                        <!-- 第二个二维码 - 快手 -->
+                        <div class="col-3 text-center">
+                            <p>快手</p>
+                            <a href="#" target="_blank">
+                                <img src="快手.png" alt="快手二维码" class="img-fluid qr-code-img">
+                            </a>
+                        </div>
+                        <!-- 第三个二维码 - 小红书 -->
+                        <div class="col-3 text-center">
+                            <p>小红书</p>
+                            <a href="#" target="_blank">
+                                <img src="小红书.jpg" alt="小红书二维码" class="img-fluid qr-code-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+            
+            </div>
+            <hr class="my-5">
+            <div class="text-center">
+                <p class="mb-0">青岛大心华财税公司 保留所有权利 </p>
+            </div>
+        </div>
+    </footer>
+</section>
+    <!-- 脚本 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
+</body>
+</html>
